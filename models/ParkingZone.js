@@ -13,6 +13,14 @@ const ParkingZoneSchema = new mongoose.Schema(
             required: [true, "Location is required"],
             trim: true,
         },
+        description: {
+            type: String,
+            trim: true,
+        },
+        capacity: {
+            type: Number,
+            default: 0,
+        },
     },
     { timestamps: true }
 );

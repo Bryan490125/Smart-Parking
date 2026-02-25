@@ -17,6 +17,11 @@ const ParkingSlotSchema = new mongoose.Schema(
             enum: ["available", "occupied", "maintenance"],
             default: "available",
         },
+        slotType: {
+            type: String,
+            enum: ["Standard", "Accessible", "Charging"],
+            default: "Standard",
+        },
     },
     { timestamps: true }
 );

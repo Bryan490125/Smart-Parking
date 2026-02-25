@@ -39,7 +39,7 @@ export async function POST(request) {
 
         await connectDB();
         const body = await request.json();
-        const { zoneName, location } = body;
+        const { zoneName, location, description, capacity } = body;
 
         if (!zoneName || !location) {
             return NextResponse.json(
@@ -51,6 +51,8 @@ export async function POST(request) {
         const zone = await ParkingZone.create({
             zoneName,
             location,
+            description,
+            capacity: capacity || 0,
         });
 
         return NextResponse.json(

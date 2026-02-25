@@ -55,7 +55,7 @@ export async function POST(request) {
 
         await connectDB();
         const body = await request.json();
-        const { slotId, reservationDate, startTime, endTime } = body;
+        const { slotId, reservationDate, startTime, endTime, vehicleNumber } = body;
 
         if (!slotId || !reservationDate || !startTime || !endTime) {
             return NextResponse.json(
@@ -66,6 +66,13 @@ export async function POST(request) {
 
         const start = new Date(startTime);
         const end = new Date(endTime);
+
+        if (start < new Date()) {
+            return NextResponse.json(
+                { error: "Reservation cannot be in the past" },
+                { status: 400 }
+            );
+        }
 
         if (end <= start) {
             return NextResponse.json(
@@ -110,6 +117,7 @@ export async function POST(request) {
             startTime: start,
             endTime: end,
             status: "active",
+            vehicleNumber,
         });
 
         // Mark slot as occupied

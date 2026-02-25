@@ -57,7 +57,7 @@ export default function SlotsPage() {
 
     const openCreate = () => {
         setEditingSlot(null);
-        setForm({ slotNumber: "", zoneId: zones[0]?._id || "", status: "available" });
+        setForm({ slotNumber: "", zoneId: zones[0]?._id || "", status: "available", slotType: "Standard" });
         setError("");
         setModalOpen(true);
     };
@@ -68,6 +68,7 @@ export default function SlotsPage() {
             slotNumber: slot.slotNumber,
             zoneId: slot.zoneId?._id || slot.zoneId,
             status: slot.status,
+            slotType: slot.slotType || "Standard",
         });
         setError("");
         setModalOpen(true);
@@ -161,6 +162,7 @@ export default function SlotsPage() {
                             <tr>
                                 <th>Slot #</th>
                                 <th>Zone</th>
+                                <th>Type</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -170,6 +172,11 @@ export default function SlotsPage() {
                                 <tr key={slot._id}>
                                     <td style={{ fontWeight: 600 }}>{slot.slotNumber}</td>
                                     <td>{slot.zoneId?.zoneName || "—"}</td>
+                                    <td>
+                                        <span className="badge" style={{ background: "var(--gray-100)", color: "var(--gray-700)" }}>
+                                            {slot.slotType || "Standard"}
+                                        </span>
+                                    </td>
                                     <td>
                                         <span className={`badge badge-${slot.status}`}>
                                             {slot.status}
@@ -230,6 +237,18 @@ export default function SlotsPage() {
                             {zones.map((z) => (
                                 <option key={z._id} value={z._id}>{z.zoneName}</option>
                             ))}
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label">Slot Type</label>
+                        <select
+                            className="form-select"
+                            value={form.slotType}
+                            onChange={(e) => setForm({ ...form, slotType: e.target.value })}
+                        >
+                            <option value="Standard">Standard</option>
+                            <option value="Accessible">Accessible</option>
+                            <option value="Charging">Charging</option>
                         </select>
                     </div>
                     <div className="form-group">

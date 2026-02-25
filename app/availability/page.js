@@ -25,6 +25,7 @@ function AvailabilityContent() {
         reservationDate: new Date().toISOString().split("T")[0],
         startTime: "",
         endTime: "",
+        vehicleNumber: "",
     });
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
@@ -217,6 +218,17 @@ function AvailabilityContent() {
                             className="form-input"
                             value={form.reservationDate}
                             onChange={(e) => setForm({ ...form, reservationDate: e.target.value })}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label">Vehicle Number</label>
+                        <input
+                            type="text"
+                            className="form-input"
+                            placeholder="e.g. ABC-1234"
+                            value={form.vehicleNumber}
+                            onChange={(e) => setForm({ ...form, vehicleNumber: e.target.value })}
                             required
                         />
                     </div>

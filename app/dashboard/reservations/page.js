@@ -93,6 +93,7 @@ export default function ReservationsPage() {
                             <tr>
                                 {isAdmin && <th>User</th>}
                                 <th>Slot</th>
+                                <th>Vehicle</th>
                                 <th>Zone</th>
                                 <th>Date</th>
                                 <th>Start</th>
@@ -110,6 +111,7 @@ export default function ReservationsPage() {
                                         </td>
                                     )}
                                     <td style={{ fontWeight: 600 }}>{r.slotId?.slotNumber || "—"}</td>
+                                    <td>{r.vehicleNumber || "—"}</td>
                                     <td>{r.slotId?.zoneId?.zoneName || "—"}</td>
                                     <td>{new Date(r.reservationDate).toLocaleDateString()}</td>
                                     <td>{new Date(r.startTime).toLocaleTimeString()}</td>

@@ -50,7 +50,7 @@ export async function POST(request) {
 
         await connectDB();
         const body = await request.json();
-        const { slotNumber, zoneId, status } = body;
+        const { slotNumber, zoneId, status, slotType } = body;
 
         if (!slotNumber || !zoneId) {
             return NextResponse.json(
@@ -63,6 +63,7 @@ export async function POST(request) {
             slotNumber,
             zoneId,
             status: status || "available",
+            slotType: slotType || "Standard",
         });
 
         const populated = await slot.populate("zoneId", "zoneName location");

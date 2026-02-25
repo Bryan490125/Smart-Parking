@@ -36,7 +36,7 @@ export default function ZonesPage() {
 
     const openCreate = () => {
         setEditingZone(null);
-        setForm({ zoneName: "", location: "" });
+        setForm({ zoneName: "", location: "", description: "", capacity: 0 });
         setError("");
         setModalOpen(true);
     };
@@ -46,6 +46,8 @@ export default function ZonesPage() {
         setForm({
             zoneName: zone.zoneName,
             location: zone.location,
+            description: zone.description || "",
+            capacity: zone.capacity || 0,
         });
         setError("");
         setModalOpen(true);
@@ -122,6 +124,8 @@ export default function ZonesPage() {
                             <tr>
                                 <th>Name</th>
                                 <th>Location</th>
+                                <th>Description</th>
+                                <th>Capacity</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -130,6 +134,8 @@ export default function ZonesPage() {
                                 <tr key={zone._id}>
                                     <td style={{ fontWeight: 600 }}>{zone.zoneName}</td>
                                     <td>{zone.location}</td>
+                                    <td style={{ fontSize: "0.875rem", color: "var(--gray-500)" }}>{zone.description || "—"}</td>
+                                    <td>{zone.capacity || 0}</td>
                                     <td>
                                         <div className="actions-cell">
                                             <button
@@ -184,6 +190,26 @@ export default function ZonesPage() {
                             required
                         />
                     </div>
+                    <div className="form-group">
+                        <label className="form-label">Description</label>
+                        <input
+                            type="text"
+                            className="form-input"
+                            placeholder="e.g. Near the main entrance"
+                            value={form.description}
+                            onChange={(e) => setForm({ ...form, description: e.target.value })}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label">Capacity</label>
+                        <input
+                            type="number"
+                            className="form-input"
+                            value={form.capacity}
+                            onChange={(e) => setForm({ ...form, capacity: parseInt(e.target.value) || 0 })}
+                        />
+                    </div>
+                    drum
 
                     <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
                         {editingZone ? "Update Zone" : "Create Zone"}

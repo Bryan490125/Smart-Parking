@@ -85,8 +85,9 @@ export async function DELETE(request, { params }) {
 
         await connectDB();
         const { id } = await params;
-        const zone = await ParkingZone.findByIdAndDelete(id);
 
+        // Find and delete the zone
+        const zone = await ParkingZone.findByIdAndDelete(id);
         if (!zone) {
             return NextResponse.json(
                 { error: "Zone not found" },
@@ -94,7 +95,11 @@ export async function DELETE(request, { params }) {
             );
         }
 
-        return NextResponse.json({ message: "Zone deleted" });
+        // Cascading delete: Remove all slots in this zone
+        const ParkingSlot = (await import("@/models/ParkingSlot")).default;
+        await ParkingSlot.deleteMany({ zoneId: id });
+
+        return NextResponse.json({ message: "Zone and all associated slots deleted" });
     } catch (error) {
         console.error("Delete zone error:", error);
         return NextResponse.json(

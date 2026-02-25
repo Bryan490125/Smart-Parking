@@ -30,6 +30,14 @@ const ReservationSchema = new mongoose.Schema(
             enum: ["active", "completed", "cancelled"],
             default: "active",
         },
+        vehicleNumber: {
+            type: String,
+            trim: true,
+        },
+        totalCost: {
+            type: Number,
+            default: 0,
+        },
     },
     { timestamps: true }
 );
