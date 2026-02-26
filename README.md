@@ -2,8 +2,7 @@
 
 ## Team Members
 - Zaw Lin Aung — https://github.com/u6622137-ai
-- Member 2 — https://github.com/__________
-- Member 3 — https://github.com/__________
+- Nyi Min Htet
 
 ## Project Description
 SmartPark is a university parking reservation system built with Next.js and MongoDB. Users can browse parking areas and reserve a parking area for a time period. Admins can manage parking areas and view reservations. The system also provides analytics such as the most reserved parking area and peak reservation hour.
@@ -15,7 +14,7 @@ SmartPark is a university parking reservation system built with Next.js and Mong
 - Deployment: Azure VM (Ubuntu) + Nginx + PM2
 
 ## Production URL
-- http://20.195.26.45
+- http://my-server-016622137.southeastasia.cloudapp.azure.com/
 
 ## Features
 
