@@ -17,10 +17,9 @@ SmartPark is a university parking reservation system built with Next.js and Mong
 - http://my-server-016622137.southeastasia.cloudapp.azure.com/
 
 ## Screenshots
-> [!TIP]
-> Add your project screenshots here. You can use the `screenshot_checklist.md` as a guide.
-> ![Dashboard](/screenshots/dashboard.png)
-> ![Reservation](/screenshots/reservation.png)
+## ☁️ Azure Cloud Deployment
+
+![Azure VM Running](https://github.com/user-attachments/assets/d7b6e9ef-4ba8-4378-af84-89b792459f0c)
 
 ## Video Demo
 - [YouTube Link](https://www.youtube.com/watch?v=___________) (5-minute walkthrough)
