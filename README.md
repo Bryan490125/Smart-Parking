@@ -127,7 +127,7 @@ https://www.youtube.com/watch?v=3y15cpfoZ8g&t=1s
 3) Create `.env.local`:
 
 ## Contribution
-### Nyi Min Htet
+### Zaw Lin Aung
 
 - Designed database schema and system architecture
 
@@ -141,7 +141,7 @@ https://www.youtube.com/watch?v=3y15cpfoZ8g&t=1s
 
 - Configured Nginx and PM2
 
-### Zaw Lin Aung
+### Nyi Min Htet
 
 - Developed frontend using Next.js
 
