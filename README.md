@@ -34,6 +34,46 @@ Watch here:
 https://www.youtube.com/watch?v=3y15cpfoZ8g&t=1s
 
 ## Features
+### Authentication & Authorization
+- User registration
+- Secure login with JWT
+- Role-based access control (User / Admin)
+- Protected API routes
+
+### 👤 User Features
+- Browse parking zones
+- View available parking slots
+- Create reservation (time-based booking)
+- Prevent over-booking with capacity validation
+- View own reservations
+
+---
+
+### 👑 Admin Features
+- Full CRUD for Parking Zones
+- Full CRUD for Parking Slots
+- View all reservations
+- Manage users
+- Analytics dashboard with:
+  - Most reserved parking zone
+  - Peak reservation hour
+  - Total reservations
+  - Slot utilization overview
+
+---
+
+### 📊 Analytics
+- Aggregation-based statistics from MongoDB
+- Dashboard visualization
+- Real-time reservation insights
+
+---
+
+### ☁️ Cloud & DevOps
+- Deployed on Azure Virtual Machine
+- Reverse proxy with Nginx
+- Process management with PM2
+- Production-ready configuration
 
 ### User
 - View parking areas
