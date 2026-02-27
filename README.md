@@ -126,6 +126,37 @@ https://www.youtube.com/watch?v=3y15cpfoZ8g&t=1s
 2) Start MongoDB locally (or via Docker)
 3) Create `.env.local`:
 
+## Contribution
+### Nyi Min Htet
+
+- Designed database schema and system architecture
+
+- Implemented MongoDB models
+
+- Developed authentication using JWT
+
+- Implemented reservation validation logic
+
+- Deployed system on Azure VM
+
+- Configured Nginx and PM2
+
+### Zaw Lin Aung
+
+- Developed frontend using Next.js
+
+- Built Admin and Student dashboards
+
+- Implemented CRUD management pages
+
+- Integrated frontend with backend APIs
+
+- Performed system testing and debugging
+
+## Project Proposal
+[Project Proposal](docs/SmartPark_Project_Proposal.pdf)
+
+
 ```env
 MONGODB_URI=mongodb://127.0.0.1:27017/smartpark
 JWT_SECRET=smartpark_secret_change_me
